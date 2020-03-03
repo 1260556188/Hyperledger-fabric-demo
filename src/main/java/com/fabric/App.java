@@ -10,6 +10,7 @@ import org.springframework.cache.annotation.EnableCaching;
 @MapperScan("com.fabric.dao")
 public class App {
 
+	
 	public static void main(String[] args) {
 		SpringApplication.run(App.class, args);
 	}

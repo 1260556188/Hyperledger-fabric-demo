@@ -1,5 +1,6 @@
 package com.fabric.common;
 
+
 /**
  *
  * 统一响应结构
