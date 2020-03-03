@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.fabric.dao.ApiDao">
+
+
+
+	<insert id="addApi" parameterType="com.fabric.pojo.Api">
+		insert into test values(default,#{name},{pwd})
+	</insert>
+	
+	<select id="getApi" resultType="com.fabric.pojo.Api">
+		select * from test where id=#{id}
+	</select>
+	
+	<select id="getAllApi" resultType="com.fabric.pojo.Api">
+		select * from test
+	</select>
+
+</mapper>

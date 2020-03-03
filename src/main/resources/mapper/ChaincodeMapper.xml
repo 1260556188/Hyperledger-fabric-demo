@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.fabric.dao.ChaincodeDao">
+
+	<select id="queryChaincodeIsExist" resultType="com.fabric.pojo.Chaincode">
+		select * from chaincode where org_name=#{orgname} and channel_name=#{channelname}
+	</select>
+	
+	<insert id="insertChaincode" parameterType="com.fabric.pojo.Chaincode">
+		insert into chaincode values(default,#{orgName},#{channelName},#{chaincodeName},#{chaincodeVersion},#{chaincodePath},#{isInstantiated})
+	</insert>
+	
+	<update id="updateChaincode">
+		update chaincode set chaincode_path=#{path},chaincode_version = #{version} where channel_name =#{id}
+	</update>
+	<!-- updateChaincodeIns -->
+	<update id="updateChaincodeIns">
+		update chaincode set is_instantiated=#{ins} where channel_name=#{name}
+	</update>
+</mapper>

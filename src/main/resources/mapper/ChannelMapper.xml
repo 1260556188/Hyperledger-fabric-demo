@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.fabric.dao.ChannelDao">
+
+	<select id="getChannelInfo" resultType="com.fabric.pojo.Channel">
+		select * from channel where channel_name=#{name}
+	</select>
+	<update id="updateChannelInfo">
+		update channel set is_created =#{flag} where id =#{id}
+	</update>
+</mapper>
